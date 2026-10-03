@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": { "display": "flex", "align-items": "center" },
+  "children": [
+    {
+      "elmType": "span",
+      "txtContent": "=if(@currentField=='active','● Active','○ Disabled')",
+      "style": { "font-weight": "600", "color": "=if(@currentField=='active','#3E8E6A','#8A9A94')", "margin-inline-end": "10px" }
+    },
+    {
+      "elmType": "button",
+      "customRowAction": {
+        "action": "setValue",
+        "actionInput": {
+          "Status": "=if(@currentField=='active','disabled','active')",
+          "ChangedBy": "user"
+        }
+      },
+      "txtContent": "=if(@currentField=='active','Disable','Enable')",
+      "style": {
+        "border": "1px solid #D3E1E8",
+        "background-color": "#FFFFFF",
+        "color": "#1E6A86",
+        "border-radius": "999px",
+        "padding": "2px 10px",
+        "cursor": "pointer"
+      }
+    }
+  ]
+}

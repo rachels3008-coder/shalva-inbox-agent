@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": { "display": "flex", "align-items": "center" },
+  "children": [
+    {
+      "elmType": "span",
+      "style": {
+        "display": "inline-block",
+        "width": "10px",
+        "height": "10px",
+        "border-radius": "50%",
+        "margin-inline-end": "8px",
+        "background-color": "=if(indexOf(@currentField,'1')==0,'#C2453D',if(indexOf(@currentField,'2')==0,'#D08A2E',if(indexOf(@currentField,'3')==0,'#3E8E6A',if(indexOf(@currentField,'6')==0,'#1E6A86','transparent'))))",
+        "border": "=if(indexOf(@currentField,'4')==0,'2px solid #8A9A94','none')",
+        "box-sizing": "border-box"
+      }
+    },
+    { "elmType": "span", "style": { "font-weight": "600", "color": "#1D3644" }, "txtContent": "@currentField" }
+  ]
+}

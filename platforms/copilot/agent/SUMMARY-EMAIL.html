@@ -1,0 +1,45 @@
+<!-- SUMMARY-EMAIL (knowledge file). Shalva fills the {{...}} placeholders and repeats the marked rows.
+     Inline styles only (Outlook). dir="rtl" for Hebrew/Arabic, dir="ltr" otherwise. Nothing smaller than 14px. -->
+<div dir="{{DIR}}" style="font-family:Heebo,Segoe UI,Arial,sans-serif;color:#1D3644;font-size:16px;line-height:1.5;width:100%">
+
+  <div style="background:#1D3644;color:#ffffff;border-top:3px solid #B98E4E;border-radius:8px;padding:12px 16px;font-size:16px">
+    {{L_SCANNED}} <b style="color:#E3C58F">{{SCANNED}}</b> &nbsp;·&nbsp;
+    {{L_FILED}} <b style="color:#E3C58F">{{FILED}}</b> &nbsp;·&nbsp;
+    {{L_DRAFTS}} <b style="color:#E3C58F">{{DRAFTS}}</b> &nbsp;·&nbsp;
+    {{L_OPEN}} <b style="color:#E3C58F">{{OPEN}}</b> &nbsp;·&nbsp;
+    {{L_INBOX}} <b style="color:#E3C58F">{{INBOX}}</b>
+  </div>
+
+  <h3 style="font-size:18px;margin:18px 0 8px">{{L_OPEN_TASKS}}</h3>
+  <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:15px">
+    <tr style="background:#EBF2F5">
+      <th align="{{START}}" style="padding:8px 10px">{{L_PRIORITY}}</th>
+      <th align="{{START}}" style="padding:8px 10px">{{L_SUBJECT_WHO}}</th>
+      <th align="{{START}}" style="padding:8px 10px">{{L_WHAT}}</th>
+      <th align="{{START}}" style="padding:8px 10px">{{L_LINKS}}</th>
+    </tr>
+    <!-- REPEAT per task, sorted by priority. Dot colors: 1 #C2453D · 2 #D08A2E · 3 #3E8E6A · 4 #8A9A94. Zebra: even rows background #F6FAFC -->
+    <tr style="background:{{ROW_BG}}">
+      <td style="padding:8px 10px;border-bottom:1px solid #E1EAF0;white-space:nowrap;font-weight:700;color:{{P_COLOR}}">● {{P_WORD}}</td>
+      <td style="padding:8px 10px;border-bottom:1px solid #E1EAF0">{{SUBJECT}} · {{WHO}}</td>
+      <td style="padding:8px 10px;border-bottom:1px solid #E1EAF0">{{ACTION}}</td>
+      <td style="padding:8px 10px;border-bottom:1px solid #E1EAF0"><a href="{{EMAIL_LINK}}" style="color:#1E6A86">{{L_EMAIL}}</a>{{ · DRAFT/SESSION LINK }}</td>
+    </tr>
+    <!-- /REPEAT -->
+  </table>
+
+  <!-- Each section below: <h3 style="font-size:18px;margin:18px 0 6px">…</h3><ul style="margin:0;padding-inline-start:20px">…</ul>. Omit empty sections. -->
+  {{SECTION focus blocks}}
+  {{SECTION deep-draft sessions}}
+  {{SECTION check-ins to colleagues}}
+  {{SECTION waiting for reply}}
+  {{SECTION what was done}}
+  {{SECTION 📁 filed: grouped by client — "Sender · Subject – summary" + link; max 25 lines then "+N more"; noise in one count line}}
+  {{SECTION 📝 learning from drafts: one line + new rules + pending}}
+  {{SECTION insights: 3–5 points}}
+
+  <div style="margin-top:18px;padding-top:10px;border-top:1px solid #D3E1E8;color:#577080;font-size:14px">
+    {{L_BACKLOG}}: {{BACKLOG}} · {{L_CALENDAR}}: {{CAL_STATUS}} · {{L_NEXT_RUN}}: {{NEXT_RUN}} ·
+    <a href="{{DASHBOARD_URL}}" style="color:#1E6A86">{{L_DASHBOARD}}</a>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "span",
+  "txtContent": "=if(@currentField=='as_is','As is',if(@currentField=='edited','Edited',if(@currentField=='rewritten','Rewritten',if(@currentField=='unsent','Not sent','Pending'))))",
+  "style": {
+    "display": "inline-block",
+    "padding": "2px 10px",
+    "border-radius": "999px",
+    "font-weight": "600",
+    "font-size": "12px",
+    "color": "=if(@currentField=='as_is','#1E6A86',if(@currentField=='edited','#8A6A2E',if(@currentField=='rewritten','#A33A33','#577080')))",
+    "background-color": "=if(@currentField=='as_is','#DCEBF2',if(@currentField=='edited','#F3E9D8',if(@currentField=='rewritten','#F6DEDB','#EBF2F5')))"
+  }
+}
